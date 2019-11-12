@@ -28,7 +28,7 @@ int main(void)
 				break;
 			case 2:
 
-				Ñyclic_Shift_Arr(pointArr, lineArr);
+				Cyclic_Shift_Arr(pointArr, lineArr);
 				break;
 			case 3:
 				Search_ColumnArr_SumElement_Positive(pointArr, lineArr, columnArr);
