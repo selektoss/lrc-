@@ -38,6 +38,7 @@ FILE* ConnectFile(FILE* fileX, char* filename)
 	} else printf("%s", "File is alredy open!");
 
 	return fileX;
+	
 };
 char* SearchSuggestionsAndGreateDynamicMemory(FILE* fileX, char* filename, char* ArrText)
 {
@@ -88,6 +89,7 @@ char* SearchSuggestionsAndGreateDynamicMemory(FILE* fileX, char* filename, char*
 	delete[] ArrText;
 	CloseFile(fileX);
 	return nullptr;
+	
 };
 
 
@@ -99,4 +101,5 @@ void CloseFile(FILE* fileX)
 		printf("%s", "File is close.");
 		checkFile = NULL;
 	} else printf("%s", "Nothing to close.");
+	
 };
