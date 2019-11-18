@@ -16,7 +16,7 @@ int main(void)
 	do
 	{
 		printf("%s", "\r\nMake your choice: ");
-		Try_Error_Cin(ChoiceNumberMenu);
+		Try_Error_Scan(ChoiceNumberMenu);
 
 		if ((ChoiceNumberMenu <= 4) && (ChoiceNumberMenu >= NULL)) {
 			switch (ChoiceNumberMenu)
