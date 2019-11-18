@@ -46,7 +46,6 @@ char* SearchSuggestionsAndGreateDynamicMemory(FILE* fileX, char* filename, char*
 	{
 		fseek(fileX, 0, SEEK_END);
 		size_t lenText = (ftell(fileX));
-		fseek(fileX, 0, SEEK_SET);
 		ArrText = new char[lenText];
 		char ChoiceYesOrNo = NULL;
 		do {
@@ -55,7 +54,7 @@ char* SearchSuggestionsAndGreateDynamicMemory(FILE* fileX, char* filename, char*
 		
 			printf("%s", "Enter number word, for search to text File = ");
 			Try_Error_Scan(numberWord);
-
+			fseek(fileX, 0, SEEK_SET);
 			while ((resultFscanfCode = fscanf(fileX, "%[^.!?]", ArrText + (countLen + shiftIndex))) != EOF)
 			{
 				fseek(fileX, 1, SEEK_CUR);
