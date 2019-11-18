@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "FuncFile.hpp"
-
 static int checkFile = NULL;
+
 void GreateNameFile(char* fileName, const size_t &size = 21)
 {
 
@@ -19,8 +19,7 @@ void GreateNameFile(char* fileName, const size_t &size = 21)
 			else { rewind(stdin); }
 		}
 	}
-	else printf("%s%s%s", "File open is ", fileName, " Please close this file!");
-	
+	else printf("%s%s%s", "File open is ", fileName, " Please close this file!");	
 };
 
 FILE* ConnectFile(FILE* fileX, char* filename)
@@ -37,9 +36,9 @@ FILE* ConnectFile(FILE* fileX, char* filename)
 		printf("%s", "OK! File is open.");
 	} else printf("%s", "File is alredy open!");
 
-	return fileX;
-	
+	return fileX;	
 };
+
 char* SearchSuggestionsAndGreateDynamicMemory(FILE* fileX, char* filename, char* ArrText)
 {
 	SetConsoleOutputCP(1251);
@@ -55,7 +54,7 @@ char* SearchSuggestionsAndGreateDynamicMemory(FILE* fileX, char* filename, char*
 			tempLen = NULL, numberWord = NULL, counterSearching = NULL;
 		
 			printf("%s", "Enter number word, for search to text File = ");
-			Try_Error_Cin(numberWord);
+			Try_Error_Scan(numberWord);
 
 			while ((resultFscanfCode = fscanf(fileX, "%[^.!?]", ArrText + (countLen + shiftIndex))) != EOF)
 			{
@@ -83,16 +82,13 @@ char* SearchSuggestionsAndGreateDynamicMemory(FILE* fileX, char* filename, char*
 			else printf("%s%d\n\r", "The number of sentences found = ", counterSearching);
 
 			printf("%s", "Continue searching? (y/n) : ");
-			Try_Error_Cin(ChoiceYesOrNo);
+			Try_Error_Scan(ChoiceYesOrNo);
 		} while (ChoiceYesOrNo != 'n');
 	} 
 	delete[] ArrText;
 	CloseFile(fileX);
-	return nullptr;
-	
+	return nullptr;	
 };
-
-
 
 void CloseFile(FILE* fileX)
 {
@@ -101,5 +97,4 @@ void CloseFile(FILE* fileX)
 		printf("%s", "File is close.");
 		checkFile = NULL;
 	} else printf("%s", "Nothing to close.");
-	
 };
