@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "FuncFile.hpp"
-#include "Windows.h"
+
 static int checkFile = NULL;
 void GreateNameFile(char* fileName, const size_t &size = 21)
 {
