@@ -6,7 +6,10 @@ bool Try_Error_Scan(char& ChoiceYesOrNo)
 	{
 		scanf(" %c", &ChoiceYesOrNo);
 		if (ChoiceYesOrNo == 'y' || ChoiceYesOrNo == 'n')
+		{
+			rewind(stdin);
 			return (ChoiceYesOrNo == 'y');
+		}
 		else
 		{
 			printf("%s", "Invalid character! Repeat: ");
