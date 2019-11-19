@@ -1,12 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "FuncFile.hpp"
+#include "Windows.h"
+
 static int checkFile = NULL;
 
 void GreateNameFile(char* fileName, const size_t &size = 21)
 {
-
 	if (!checkFile) {
 		int scanName = 1;
 		printf("%s", "Please enter a text file name. Max line char 20. Example YourFile.txt : ");
@@ -18,8 +16,7 @@ void GreateNameFile(char* fileName, const size_t &size = 21)
 			}
 			else { rewind(stdin); }
 		}
-	}
-	else printf("%s%s%s", "File open is ", fileName, " Please close this file!");	
+	} else printf("%s%s%s", "File open is ", fileName, " Please close this file!");	
 };
 
 FILE* ConnectFile(FILE* fileX, char* filename)
@@ -28,15 +25,13 @@ FILE* ConnectFile(FILE* fileX, char* filename)
 		while (!(fileX = fopen(filename, "r")))
 		{
 			printf("%s\n", "Error opening file! Change name, file path.");
-			
-				GreateNameFile(filename);
-		 
+			GreateNameFile(filename);		 
 		}
 		checkFile = 1;
 		printf("%s", "OK! File is open.");
 	} else printf("%s", "File is alredy open!");
 
-	return fileX;	
+	return fileX;
 };
 
 char* SearchSuggestionsAndGreateDynamicMemory(FILE* fileX, char* filename, char* ArrText)
@@ -58,8 +53,8 @@ char* SearchSuggestionsAndGreateDynamicMemory(FILE* fileX, char* filename, char*
 			while ((resultFscanfCode = fscanf(fileX, "%[^.!?]", ArrText + (countLen + shiftIndex))) != EOF)
 			{
 				fseek(fileX, 1, SEEK_CUR);
-				if (resultFscanfCode) {
-
+				if (resultFscanfCode) 
+				{
 					tempLen = (countLen + shiftIndex);
 					countLen += (strlen(ArrText + (countLen + shiftIndex))) + shiftIndex;
 					count = 1 ? ((*(ArrText + tempLen) != ' ')) : count = NULL;
@@ -86,7 +81,7 @@ char* SearchSuggestionsAndGreateDynamicMemory(FILE* fileX, char* filename, char*
 	} 
 	delete[] ArrText;
 	CloseFile(fileX);
-	return nullptr;	
+	return nullptr;
 };
 
 void CloseFile(FILE* fileX)
