@@ -1,4 +1,3 @@
-#include <iostream>
 #include <random>
 #include "FuncArr.hpp"
 float* Great_Array_Dynamic_Memory(float* pArr, int16_t& size)
@@ -42,7 +41,7 @@ float* Great_Array_Dynamic_Memory(float* pArr, int16_t& size)
 			for (size_t i = 0; i < size; i++)
 			{
 				float ElementNumberInsertArray;
-				std::cout << "Enter a real number น" << i + 1 << " : ";
+				std::cout << "Enter a real number ยน" << i + 1 << " : ";
 				*(pArr + i) = Try_Error_Cin(ElementNumberInsertArray);
 			}
 		}
