@@ -14,7 +14,7 @@ int main(void)
 		float* pointArr = nullptr;		
 		do
 		{
-			std::cout << "Make your choice: ";
+			cout << "Make your choice: ";
 			Try_Error_Cin(ChoiceNumberMenu);
 			if ((ChoiceNumberMenu <= 5)&&(ChoiceNumberMenu >= NULL)) {
 					switch (ChoiceNumberMenu)
