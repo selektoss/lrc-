@@ -1,4 +1,3 @@
-﻿#include <iostream>
 #include <random>
 #include <iomanip>
 #include "FuncArray.hpp"
@@ -75,6 +74,7 @@ float** Great_Array_Dynamic_Memory(float **pArr, int16_t &lineArr, int16_t &colu
 	}
 	return pArr;
 };
+
 static int16_t FixedIndexAdress = NULL;
 
 float** Delete_Arr(float **PointerArr)
@@ -93,7 +93,7 @@ float** Delete_Arr(float **PointerArr)
 	return nullptr;
 };
 
-void Show_Arr_Console(float **PointArr, const int16_t& lineArr, const int16_t& columnArr)
+void Show_Arr_Console(float** PointArr, const int16_t& lineArr, const int16_t& columnArr)
 {
 	if (PointArr)
 	{
@@ -104,19 +104,19 @@ void Show_Arr_Console(float **PointArr, const int16_t& lineArr, const int16_t& c
 
 			for (size_t j = 0; j < columnArr; j++)
 			{
-				
-				std::cout << " | " << std::setw(6) << *(*(PointArr + i)+j) << " | ";
+
+				std::cout << " | " << std::setw(6) << *(*(PointArr + i) + j) << " | ";
 			}
 			std::cout << std::endl;
 		}
 		std::cout << std::endl;
 	}
 	else std::cout << "Nothing to print! Create an array" << std::endl;
-}
+};
 
-void Search_ColumnArr_SumElement_Positive(float **pointArr, const int16_t& lineArr, const int16_t& columnArr)
+void Search_ColumnArr_SumElement_Positive(float** pointArr, const int16_t& lineArr, const int16_t& columnArr)
 {
-	if (pointArr) 
+	if (pointArr)
 	{
 		float temp = NULL;
 		int16_t countColumn = NULL;
@@ -127,18 +127,18 @@ void Search_ColumnArr_SumElement_Positive(float **pointArr, const int16_t& lineA
 			{
 				temp += *(*(pointArr + i) + j);
 			}
-			if(temp>0) ++countColumn;
+			if (temp > 0) ++countColumn;
 
 
 		}
 		std::cout << "Positive Matrix Columns = " << countColumn << std::endl;
 	}
 	else { std::cout << "Matrix not found! Create her." << std::endl; }
-}
+};
 
-void Сyclic_Shift_Arr(float** pointArr, const int16_t &lineArr)
+void Cyclic_Shift_Arr(float** pointArr, const int16_t& lineArr)
 {
-	
+
 	if (pointArr)
 	{
 		int16_t k, iterK;
@@ -146,15 +146,15 @@ void Сyclic_Shift_Arr(float** pointArr, const int16_t &lineArr)
 		Try_Error_Cin(k);
 		int16_t FixedIndexTemp = NULL;
 
-		if ((k % (lineArr)) == 0) 
+		if ((k % (lineArr)) == 0)
 		{
 			std::cout << "Why not move. The resulting matrix will be equal to the original." << std::endl;
-		} 
-		else 
-		{ 
+		}
+		else
+		{
 			iterK = k % (lineArr);
-			FixedIndexTemp = ((lineArr) - (k % lineArr)) + FixedIndexAdress;
-			
+			FixedIndexTemp = ((lineArr)-(k % lineArr)) + FixedIndexAdress;
+
 			if (FixedIndexTemp == lineArr)
 			{
 				FixedIndexTemp = NULL;
@@ -163,21 +163,21 @@ void Сyclic_Shift_Arr(float** pointArr, const int16_t &lineArr)
 			{
 				FixedIndexTemp -= lineArr;
 			}
-				
 
-  		for (size_t j = 0; j < iterK; j++)
-		{
-			float* temp = &**(pointArr);			
-			for (size_t i = 0; i < lineArr - 1; i++)
+
+			for (size_t j = 0; j < iterK; j++)
 			{
-				*(pointArr + i) = &**(pointArr + (i + 1));
+				float* temp = &**(pointArr);
+				for (size_t i = 0; i < lineArr - 1; i++)
+				{
+					*(pointArr + i) = &**(pointArr + (i + 1));
+				}
+				*(pointArr + (lineArr - 1)) = &*temp;
 			}
-			*(pointArr + (lineArr - 1)) = &*temp;
+			FixedIndexAdress = FixedIndexTemp;
 		}
-		FixedIndexAdress = FixedIndexTemp;
-	}
-		
+
 	}
 	else { std::cout << "Nothing to shift. Create matrix!" << std::endl; }
-	
-}
+
+};
