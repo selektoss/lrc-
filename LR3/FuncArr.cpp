@@ -87,7 +87,7 @@ void Sort_Arr_Descending_InsertMethod(float* PointArr, const int16_t const &Size
 		}		
 		std::cout << "Sort completed!" << std::endl;
 	} else { std::cout << "Nothing to Sort! Create an array!" << std::endl; }	
-}
+};
 
 void Show_Arr_Console(const float *PointArr, const int16_t &SizeArr)
 {
@@ -100,7 +100,7 @@ void Show_Arr_Console(const float *PointArr, const int16_t &SizeArr)
 		std::cout << std::endl;
 	}
 	else std::cout << "Nothing to print! Create an array!" << std::endl;
-}
+};
 
 void Swap_Element_Arr(float* PointArr, const int16_t const &SizeArr)
 {
@@ -114,7 +114,7 @@ void Swap_Element_Arr(float* PointArr, const int16_t const &SizeArr)
 		}
 		std::cout << "Changed the elements of even and odd indices!" << std::endl;
 	} else std::cout << "Nothing to change! Array not found." << std::endl;
-}
+};
 
 float* Delete_Arr(float* PointerArr)
 {
