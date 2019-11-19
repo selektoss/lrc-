@@ -1,4 +1,3 @@
-#include <iostream>
 #include "FuncArr.hpp"
 using namespace std;
 int main(void)
