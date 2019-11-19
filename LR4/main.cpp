@@ -1,4 +1,3 @@
-#include <iostream>
 #include "FuncArray.hpp"
 using namespace std;
 
@@ -27,7 +26,6 @@ int main(void)
 				pointArr = Great_Array_Dynamic_Memory(pointArr, lineArr, columnArr);
 				break;
 			case 2:
-
 				Cyclic_Shift_Arr(pointArr, lineArr);
 				break;
 			case 3:
