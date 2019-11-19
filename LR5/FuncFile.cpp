@@ -76,8 +76,7 @@ char* SearchSuggestionsAndGreateDynamicMemory(FILE* fileX, char* filename, char*
 			else printf("%s%d\n\r", "The number of sentences found = ", counterSearching);
 
 			printf("%s", "Continue searching? (y/n) : ");
-			Try_Error_Scan(ChoiceYesOrNo);
-		} while (ChoiceYesOrNo != 'n');
+		} while (Try_Error_Scan(ChoiceYesOrNo));
 	} 
 	delete[] ArrText;
 	CloseFile(fileX);
