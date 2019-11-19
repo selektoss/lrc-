@@ -35,10 +35,12 @@ float Try_Error_Cin(float& ElementNumberInsertArray)
 
 bool Try_Error_Cin(char& ChoiceYesOrNo)
 {	
-	while (ChoiceYesOrNo != 'y' || ÑhoiceYesOrNo != 'n')
+	while (ChoiceYesOrNo != 'y' || ChoiceYesOrNo != 'n')
 	{
-		std::cin >> ÑhoiceYesOrNo;
-		if (ChoiceYesOrNo == 'y' || ÑhoiceYesOrNo == 'n')
+		std::cin >> ChoiceYesOrNo;
+		if (ChoiceYesOrNo == 'y' || ChoiceYesOrNo == 'n')
+			std::cin.clear();
+			std::cin.ignore(INT_MAX, '\n');
 			return (ChoiceYesOrNo == 'y');
 		else 
 		{
