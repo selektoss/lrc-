@@ -49,8 +49,7 @@ float** Great_Array_Dynamic_Memory(float **pArr, int16_t &lineArr, int16_t &colu
 				{
 					float random_double_result = un_real(mtDefault);
 					*(*(pArr + i)+j) = random_double_result;
-				}
-				
+				}	
 			}
 		}
 		else
@@ -69,8 +68,7 @@ float** Great_Array_Dynamic_Memory(float **pArr, int16_t &lineArr, int16_t &colu
 		if (pArr)
 		{
 			std::cout << "Array created successfully!" << std::endl;
-		}
-		else std::cout << "The array was not created!";
+		} else std::cout << "The array was not created!";
 	}
 	return pArr;
 };
@@ -82,13 +80,11 @@ float** Delete_Arr(float **PointerArr)
 	if (PointerArr)
 	{	
 		delete[] *(PointerArr+FixedIndexAdress);
-		delete[] PointerArr;
-		
+		delete[] PointerArr;		
 		std::cout << "Matrix deleted successfully!" << std::endl;
 		PointerArr = nullptr;
 		FixedIndexAdress = NULL;
-	}
-	else std::cout << "Nothing to delete!" << std::endl;
+	} else std::cout << "Nothing to delete!" << std::endl;
 
 	return nullptr;
 };
@@ -104,14 +100,12 @@ void Show_Arr_Console(float** PointArr, const int16_t& lineArr, const int16_t& c
 
 			for (size_t j = 0; j < columnArr; j++)
 			{
-
 				std::cout << " | " << std::setw(6) << *(*(PointArr + i) + j) << " | ";
 			}
 			std::cout << std::endl;
 		}
 		std::cout << std::endl;
-	}
-	else std::cout << "Nothing to print! Create an array" << std::endl;
+	} else std::cout << "Nothing to print! Create an array" << std::endl;
 };
 
 void Search_ColumnArr_SumElement_Positive(float** pointArr, const int16_t& lineArr, const int16_t& columnArr)
@@ -128,17 +122,13 @@ void Search_ColumnArr_SumElement_Positive(float** pointArr, const int16_t& lineA
 				temp += *(*(pointArr + i) + j);
 			}
 			if (temp > 0) ++countColumn;
-
-
 		}
 		std::cout << "Positive Matrix Columns = " << countColumn << std::endl;
-	}
-	else { std::cout << "Matrix not found! Create her." << std::endl; }
+	} else { std::cout << "Matrix not found! Create her." << std::endl; }
 };
 
 void Cyclic_Shift_Arr(float** pointArr, const int16_t& lineArr)
 {
-
 	if (pointArr)
 	{
 		int16_t k, iterK;
@@ -158,12 +148,11 @@ void Cyclic_Shift_Arr(float** pointArr, const int16_t& lineArr)
 			if (FixedIndexTemp == lineArr)
 			{
 				FixedIndexTemp = NULL;
-			}
+			} 
 			else if (FixedIndexTemp > lineArr)
 			{
 				FixedIndexTemp -= lineArr;
 			}
-
 
 			for (size_t j = 0; j < iterK; j++)
 			{
@@ -176,8 +165,5 @@ void Cyclic_Shift_Arr(float** pointArr, const int16_t& lineArr)
 			}
 			FixedIndexAdress = FixedIndexTemp;
 		}
-
-	}
-	else { std::cout << "Nothing to shift. Create matrix!" << std::endl; }
-
+	} else { std::cout << "Nothing to shift. Create matrix!" << std::endl; }
 };
