@@ -1,7 +1,7 @@
 #include "try_error_cin.hpp"
-const int16_t MaxError = 5;
+const uint16_t MaxError = 5;
 
-void Try_Error_Cin(int16_t& ChoiceNumber)
+void Try_Error_Cin(uint16_t& ChoiceNumber)
 {
 	int CountError = 0;
 	while (!(std::cin >> ChoiceNumber))
