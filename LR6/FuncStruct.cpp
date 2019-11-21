@@ -2,6 +2,7 @@
 #include <iomanip>
 void GreateDataTrain(std::fstream& fileOut, std::string& filename, Train& elemetTrain)
 {
+	const int16_t time[3] = { 0,59,23 };
 	using namespace std;
 
 	cout << "Please enter path file binary name : "; cin >> filename;
@@ -10,7 +11,7 @@ void GreateDataTrain(std::fstream& fileOut, std::string& filename, Train& elemet
 	if (fileOut.is_open())
 	{
 		char ChoiceYesOrNo = NULL;
-		if (fileOut.tellg() && !fileOut.bad())
+		if (fileOut.tellg())
 		{
 			cout << "There are train entries in the file. Show to console now? (y/n) : ";
 			if (Try_Error_Cin(ChoiceYesOrNo))
@@ -24,8 +25,16 @@ void GreateDataTrain(std::fstream& fileOut, std::string& filename, Train& elemet
 		do {
 			cout << endl << "Enter info Train." << endl << endl << "Destination : "; cin.clear(); getline(cin, elemetTrain.destination);
 			cout << "Number train : "; Try_Error_Cin(elemetTrain.numberTrain);
-			cout << "Departure time hour : "; Try_Error_Cin(elemetTrain.timehours);
-			cout << "Departure time minute : "; Try_Error_Cin(elemetTrain.minute);
+			do {
+				cout << "Departure time hour : ";
+				Try_Error_Cin(elemetTrain.time.hours);
+			} while (elemetTrain.time.hours > time[2]);
+
+			do {
+				cout << "Departure time minute : ";
+				Try_Error_Cin(elemetTrain.time.minute);
+			} while (elemetTrain.time.minute > time[1]);
+			
 			fileOut.write((char*)& elemetTrain, sizeof(Train));
 
 			cout << "Do you add info Train again? (y/n) : ";
@@ -97,7 +106,7 @@ void SearchTrainDataByNumber(std::fstream& fileData, std::string& filename, Trai
 	if (fileData.is_open() && fileData.tellg())
 	{
 		fileData.seekp(0);
-		int16_t numberTrain = NULL, count = NULL;
+		uint16_t numberTrain = NULL, count = NULL;
 		std::cout << "Enter number Train search: ";
 		Try_Error_Cin(numberTrain);
 		while (fileData.read((char*) & *elementTrain, sizeof(Train)))
@@ -122,7 +131,7 @@ void CoutTrainForm(Train* elementTrain)
 	std::cout << "Train -> "
 		<< std::setw(5) << "Number: " << elementTrain->numberTrain
 		<< std::setw(18) << "Destination: " << std::setw(17) << elementTrain->destination
-		<< std::setprecision(7) << std::setw(15) << "Time: " << elementTrain->timehours
-		<< ":" << elementTrain->minute << std::endl;
+		<< std::setprecision(7) << std::setw(15) << "Time Departure: " << elementTrain->time.hours
+		<< ":" << elementTrain->time.minute << std::endl;
 		
 };
