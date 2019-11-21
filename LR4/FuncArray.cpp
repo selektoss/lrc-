@@ -2,7 +2,7 @@
 #include <iomanip>
 #include "FuncArray.hpp"
 
-float** Great_Array_Dynamic_Memory(float **pArr, int16_t &lineArr, int16_t &columnArr)
+float** Great_Array_Dynamic_Memory(float **pArr, uint16_t &lineArr, uint16_t &columnArr)
 {
 	const int16_t minLine = 2;
 	char ChoiceYesOrNo;
@@ -73,7 +73,7 @@ float** Great_Array_Dynamic_Memory(float **pArr, int16_t &lineArr, int16_t &colu
 	return pArr;
 };
 
-static int16_t FixedIndexAdress = NULL;
+static uint16_t FixedIndexAdress = NULL;
 
 float** Delete_Arr(float **PointerArr)
 {	
@@ -89,7 +89,7 @@ float** Delete_Arr(float **PointerArr)
 	return nullptr;
 };
 
-void Show_Arr_Console(float** PointArr, const int16_t& lineArr, const int16_t& columnArr)
+void Show_Arr_Console(float** PointArr, const uint16_t& lineArr, const uint16_t& columnArr)
 {
 	if (PointArr)
 	{
@@ -108,12 +108,12 @@ void Show_Arr_Console(float** PointArr, const int16_t& lineArr, const int16_t& c
 	} else std::cout << "Nothing to print! Create an array" << std::endl;
 };
 
-void Search_ColumnArr_SumElement_Positive(float** pointArr, const int16_t& lineArr, const int16_t& columnArr)
+void Search_ColumnArr_SumElement_Positive(float** pointArr, const uint16_t& lineArr, const uint16_t& columnArr)
 {
 	if (pointArr)
 	{
 		float temp = NULL;
-		int16_t countColumn = NULL;
+		uint16_t countColumn = NULL;
 		for (size_t j = 0; j < columnArr; j++)
 		{
 			temp = NULL;
@@ -127,14 +127,14 @@ void Search_ColumnArr_SumElement_Positive(float** pointArr, const int16_t& lineA
 	} else { std::cout << "Matrix not found! Create her." << std::endl; }
 };
 
-void Cyclic_Shift_Arr(float** pointArr, const int16_t& lineArr)
+void Cyclic_Shift_Arr(float** pointArr, const uint16_t& lineArr)
 {
 	if (pointArr)
 	{
-		int16_t k, iterK;
+		uint16_t k, iterK;
 		std::cout << "Enter an integer to shift up = ";
 		Try_Error_Cin(k);
-		int16_t FixedIndexTemp = NULL;
+		uint16_t FixedIndexTemp = NULL;
 
 		if ((k % (lineArr)) == 0)
 		{
