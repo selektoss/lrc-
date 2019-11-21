@@ -8,12 +8,12 @@ int main(void)
 		<< "2. Begin search search for a train by its number." << std::endl
 		<< "3. Sort element train by number." << std::endl
 		<< "4. Exit programm" << std::endl << std::endl;
-	int16_t ChoiceNumberMenu = NULL; Train elementTrain; std::string filename; std::fstream fileData;
+	uint16_t ChoiceNumberMenu = NULL; Train elementTrain; std::string filename; std::fstream fileData;
 	do
 	{
 		std::cout << "Make your choice: ";
 		Try_Error_Cin(ChoiceNumberMenu);
-		if ((ChoiceNumberMenu <= 4) && (ChoiceNumberMenu >= NULL)) {
+		if (ChoiceNumberMenu <= 4) {
 			switch (ChoiceNumberMenu)
 			{
 			case 0:
