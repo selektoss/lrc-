@@ -10,13 +10,13 @@ int main(void)
 		<< "4. Delete matrix" << endl
 		<< "5. Exit programm" << endl << endl;
 
-	int16_t ChoiceNumberMenu = NULL, lineArr = NULL, columnArr = NULL;
+	uint16_t ChoiceNumberMenu = NULL, lineArr = NULL, columnArr = NULL;
 	float** pointArr = nullptr; float* StartAdressArr = nullptr;
 	do
 	{
-		cout << "Make your choice: ";
+		std::cout << "Make your choice: ";
 		Try_Error_Cin(ChoiceNumberMenu);
-		if ((ChoiceNumberMenu <= 5) && (ChoiceNumberMenu >= NULL)) {
+		if (ChoiceNumberMenu <= 5) {
 			switch (ChoiceNumberMenu)
 			{
 			case 0:
