@@ -1,6 +1,6 @@
 #include <random>
 #include "FuncArr.hpp"
-float* Great_Array_Dynamic_Memory(float* pArr, int16_t& size)
+float* Great_Array_Dynamic_Memory(float* pArr, uint16_t& size)
 {
 	const int16_t MinSizeArr = 5, MaxSizeArr = 100;
 	char ChoiceYesOrNo;
@@ -57,7 +57,7 @@ void Sort_Arr_Descending_InsertMethod(float* PointArr, const int16_t const &Size
 {
 	if (PointArr)
 	{
-		int16_t p, q;
+		uint16_t p, q;
 		std::cout << "Enter the neighborhood range of a series of numbers to sort 1 < p < q < " << SizeArr << std::endl;
 		do 
 		{
@@ -71,7 +71,7 @@ void Sort_Arr_Descending_InsertMethod(float* PointArr, const int16_t const &Size
 			Try_Error_Cin(q);
 		} while ((q <= p) || (q >= SizeArr));
 				
-		const int16_t RangeStartIndex = p;
+		const uint16_t RangeStartIndex = p;
 		for (p; p <= q-1; p++)
 		{
 			for (size_t i = p; i >= RangeStartIndex; i--)
@@ -89,7 +89,7 @@ void Sort_Arr_Descending_InsertMethod(float* PointArr, const int16_t const &Size
 	} else { std::cout << "Nothing to Sort! Create an array!" << std::endl; }	
 };
 
-void Show_Arr_Console(const float *PointArr, const int16_t &SizeArr)
+void Show_Arr_Console(const float *PointArr, const uint16_t &SizeArr)
 {
 	if (PointArr) 
 	{
@@ -102,7 +102,7 @@ void Show_Arr_Console(const float *PointArr, const int16_t &SizeArr)
 	else std::cout << "Nothing to print! Create an array!" << std::endl;
 };
 
-void Swap_Element_Arr(float* PointArr, const int16_t const &SizeArr)
+void Swap_Element_Arr(float* PointArr, const uint16_t const &SizeArr)
 {
 	if (PointArr)
 	{
