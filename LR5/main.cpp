@@ -13,7 +13,7 @@ int main(void)
 		printf("%s", "\r\nMake your choice: ");
 		Try_Error_Scan(ChoiceNumberMenu);
 
-		if ((ChoiceNumberMenu <= 3) && (ChoiceNumberMenu >= NULL)) {
+		if (ChoiceNumberMenu <= 3) {
 			switch (ChoiceNumberMenu)
 			{
 			case 0:
