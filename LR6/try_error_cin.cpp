@@ -1,6 +1,6 @@
 #include "try_error_cin.hpp"
 
-void Try_Error_Cin(int16_t& ChoiceNumber)
+void Try_Error_Cin(uint16_t& ChoiceNumber)
 {
 	while (!(std::cin >> ChoiceNumber))
 	{
