@@ -9,13 +9,13 @@ int main(void)
 			 << "4. Delete array." << endl
 			 << "5. Exit program." << endl << endl;
 
-		int16_t ChoiceNumberMenu = NULL, sizeArr = NULL;
+		uint16_t ChoiceNumberMenu = NULL, sizeArr = NULL;
 		float* pointArr = nullptr;		
 		do
 		{
 			cout << "Make your choice: ";
 			Try_Error_Cin(ChoiceNumberMenu);
-			if ((ChoiceNumberMenu <= 5)&&(ChoiceNumberMenu >= NULL)) {
+			if (ChoiceNumberMenu <= 5) {
 					switch (ChoiceNumberMenu)
 					{
 					case 0:
