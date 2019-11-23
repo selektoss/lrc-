@@ -2,7 +2,7 @@
 
 bool Try_Error_Scan(char& ChoiceYesOrNo)
 {
-	while (ChoiceYesOrNo != 'y' || ChoiceYesOrNo != 'n')
+	while (true)
 	{
 		scanf(" %c", &ChoiceYesOrNo);
 		if (ChoiceYesOrNo == 'y' || ChoiceYesOrNo == 'n')
