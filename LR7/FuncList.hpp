@@ -1,0 +1,11 @@
+#pragma once
+#include "try_error_cin.hpp"
+#include "DataStruct.hpp"
+void InsertListData(AnketaData*&);
+void ShowToConsoleAllDataTrain(AnketaData*);
+void CoutList(AnketaData*);
+AnketaData* CheckLocalData(AnketaData*);
+void SaveDataListLocalDB(AnketaData*);
+AnketaData* DeleteProfileList(AnketaData*);
+void AddInfoProfile(AnketaData*&);
+void AddElementSecondList(AnketaData*&);
