@@ -9,3 +9,4 @@ void SaveDataListLocalDB(AnketaData*);
 AnketaData* DeleteProfileList(AnketaData*);
 void AddInfoProfile(AnketaData*&);
 void AddElementSecondList(AnketaData*&);
+void DeleteDataList(AnketaData*&);
