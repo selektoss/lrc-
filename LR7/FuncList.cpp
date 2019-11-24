@@ -212,3 +212,16 @@ void AddElementSecondList(AnketaData*& pointData)
 	else std::cout << "ListData is emty!" << std::endl;
 };
 
+void DeleteDataList(AnketaData*& pointBeginList)
+{
+	if (pointBeginList)
+	{
+		AnketaData* temp = pointBeginList;
+		while (temp)
+		{
+			pointBeginList = pointBeginList->nextData;
+			delete temp;
+			temp = pointBeginList;
+		}
+	}
+};
