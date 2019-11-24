@@ -43,5 +43,6 @@ int main(void)
 	} while (ChoiceNumberMenu != 5);
 
 	SaveDataListLocalDB(pointBeginList);
+	DeleteDataList(*&pointBeginList);
 	return 0;
 }
