@@ -1,29 +1,30 @@
 #include "FuncList.hpp"
-using namespace std;
+
 
 int main(void)
 {
+	using namespace std;
 	cout << "0. Enter personal data of a person." << endl
 		<< "1. Show list of all profiles a person." << endl
 		<< "2. Save data to local file." << endl
 		<< "3. Delete profile from database." << endl
 		<< "4. Add profile to the beginning of the second." << endl
 		<< "5. Exit programm" << endl << endl;
-	uint16_t ChoiceNumberMenu = NULL; AnketaData* pointBeginList = nullptr; AnketaData* pointBeginList1 = nullptr;
+	uint16_t ChoiceNumberMenu = NULL; AnketaData* pointBeginList = nullptr;
 	pointBeginList = CheckLocalData(pointBeginList);
-	//delete pointBeginList;
+	
 	do
 	{
-		std::cout << "Make your choice: ";
+		cout << "Make your choice: ";
 		Try_Error_Cin(ChoiceNumberMenu);
-		if (ChoiceNumberMenu <= 4) {
+		if (ChoiceNumberMenu <= 5) {
 			switch (ChoiceNumberMenu)
 			{
 			case 0:
 				InsertListData(*&pointBeginList);
 				break;
 			case 1:
-				ShowToConsoleAllDataTrain(pointBeginList);
+				ShowToConsoleAllDataList(pointBeginList);
 				break;
 			case 2:
 				SaveDataListLocalDB(pointBeginList);

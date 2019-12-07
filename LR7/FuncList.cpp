@@ -78,7 +78,7 @@ void InsertListData(AnketaData *&pointBegin)
 	} while (Try_Error_Cin(ChoiceYesOrNo));
 };
 
-void ShowToConsoleAllDataTrain(AnketaData* pointBeginList)
+void ShowToConsoleAllDataList(AnketaData* pointBeginList)
 {
 	if (pointBeginList) {
 		AnketaData* temp = pointBeginList;
@@ -159,18 +159,18 @@ void SaveDataListLocalDB(AnketaData* pointStart)
 				fileData.write((char*) & *pointStart, sizeof(AnketaData));
 				pointStart = pointStart->nextData;
 			}
+			fileData.close();
 		}
-		fileData.close();
 	}
+	else remove("localDB.dat");
 };
 
 
 AnketaData* DeleteProfileList(AnketaData* pointData)
 {
-	AnketaData* backElement = NULL;
 	if (pointData)
 	{
-		uint16_t idDeleteProfile = NULL, fixedDelete = NULL;
+		uint16_t idDeleteProfile = NULL;
 		std::cout << "Enter ID profile to delete in database: ";
 		Try_Error_Cin(idDeleteProfile);
 		AnketaData* temp = pointData, * back = NULL;
@@ -193,10 +193,13 @@ AnketaData* DeleteProfileList(AnketaData* pointData)
 		}
 		return pointData;
 	}
-	else std::cout << "DataList is empty. Pleas add profile to DB!" << std::endl;
+	else {
+		std::cout << "DataList is empty. Pleas add profile to DB!" << std::endl;
+		return nullptr;
+	}
 };
 
-void AddElementSecondList(AnketaData*& pointData)
+void AddElementSecondList(AnketaData* &pointData)
 {
 	if (pointData)
 	{

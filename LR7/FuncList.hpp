@@ -2,7 +2,7 @@
 #include "try_error_cin.hpp"
 #include "DataStruct.hpp"
 void InsertListData(AnketaData*&);
-void ShowToConsoleAllDataTrain(AnketaData*);
+void ShowToConsoleAllDataList(AnketaData*);
 void CoutList(AnketaData*);
 AnketaData* CheckLocalData(AnketaData*);
 void SaveDataListLocalDB(AnketaData*);
