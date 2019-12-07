@@ -1,22 +1,21 @@
 #include "try_error.hpp"
-const uint16_t MaxError = 5;
-
+const int16_t MaxError = 5;
 void Try_Error_Cin(uint16_t& ChoiceNumberMenu)
 {
-		int CountError = 0;
-		while (!(std::cin >> ChoiceNumberMenu))
+	int CountError = 0;
+	while (!(std::cin >> ChoiceNumberMenu))
+	{
+		if (++CountError > MaxError)
 		{
-			if (++CountError > MaxError)
-			{
-				ChoiceNumberMenu = MaxError;
-				std::cin.clear();
-				std::cin.ignore(INT_MAX, '\n');
-				break;
-			}
-			std::cout << "Invalid value!" << std::endl << "Repeat: ";
+			ChoiceNumberMenu = MaxError;
 			std::cin.clear();
-			std::cin.ignore(INT_MAX, '\n');		
+			std::cin.ignore(INT_MAX, '\n');
+			break;
 		}
+		std::cout << "Invalid value!" << std::endl << "Repeat: ";
+		std::cin.clear();
+		std::cin.ignore(INT_MAX, '\n');
+	}
 };
 
 float Try_Error_Cin(float& ElementNumberInsertArray)
@@ -30,22 +29,22 @@ float Try_Error_Cin(float& ElementNumberInsertArray)
 	return ElementNumberInsertArray;
 };
 
-bool Try_Error_Cin(char& ChoiceYesOrNo)
-{	
+bool Try_Error_Cin(char& ÑhoiceYesOrNo)
+{
 	while (true)
 	{
-		std::cin >> ChoiceYesOrNo;
-		if (ChoiceYesOrNo == 'y' || ChoiceYesOrNo == 'n')
+		std::cin >> ÑhoiceYesOrNo;
+		if (ÑhoiceYesOrNo == 'y' || ÑhoiceYesOrNo == 'n')
 		{
 			std::cin.clear();
 			std::cin.ignore(INT_MAX, '\n');
-			return (ChoiceYesOrNo == 'y');
+			return (ÑhoiceYesOrNo == 'y');
 		}
-		else 
+		else
 		{
 			std::cout << "Invalid character!" << std::endl << "Repeat: ";
 			std::cin.clear();
 			std::cin.ignore(INT_MAX, '\n');
 		}
-	}		
+	}
 };
