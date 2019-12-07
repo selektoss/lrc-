@@ -56,7 +56,7 @@ char* SearchSuggestionsAndGreateDynamicMemory(FILE* fileX, char* filename, char*
 				if (resultFscanfCode) 
 				{
 					tempLen = (countLen + shiftIndex);
-					countLen += (strlen(ArrText + (countLen + shiftIndex))) + shiftIndex;
+					countLen += (strlen(ArrText + (countLen + shiftIndex))); + shiftIndex;
 					count = 1 ? ((*(ArrText + tempLen) != ' ')) : count = NULL;
 					for (size_t i = tempLen; i < countLen; i++)
 					{
@@ -77,9 +77,11 @@ char* SearchSuggestionsAndGreateDynamicMemory(FILE* fileX, char* filename, char*
 
 			printf("%s", "Continue searching? (y/n) : ");
 		} while (Try_Error_Scan(ChoiceYesOrNo));
-	} 
-	delete[] ArrText;
-	CloseFile(fileX);
+		
+		delete[] ArrText;
+		CloseFile(fileX);
+	} else printf("%s\n", "Error! Open the file!");
+	
 	return nullptr;
 };
 
@@ -87,7 +89,7 @@ void CloseFile(FILE* fileX)
 {
 	if (checkFile) {
 		fclose(fileX);
-		printf("%s", "File is close.");
 		checkFile = NULL;
+		printf("%s", "File is close.");
 	} else printf("%s", "Nothing to close.");
 };
