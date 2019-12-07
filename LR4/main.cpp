@@ -11,7 +11,7 @@ int main(void)
 		<< "5. Exit programm" << endl << endl;
 
 	uint16_t ChoiceNumberMenu = NULL, lineArr = NULL, columnArr = NULL;
-	float** pointArr = nullptr; float* StartAdressArr = nullptr;
+	float** pointArr = nullptr;
 	do
 	{
 		std::cout << "Make your choice: ";
@@ -44,8 +44,8 @@ int main(void)
 
 	if (pointArr)
 	{
-		delete[] *pointArr;
+		delete[] * pointArr;
 		delete[] pointArr;
 	}
 	return 0;
-}
+};

@@ -1,4 +1,4 @@
-#include <random>
+﻿#include <random>
 #include <iomanip>
 #include "FuncArray.hpp"
 
@@ -8,7 +8,7 @@ float** Great_Array_Dynamic_Memory(float **pArr, uint16_t &lineArr, uint16_t &co
 	char ChoiceYesOrNo;
 	if (pArr)
 	{
-		std::cout << "The matrix is ​​already! ";
+		std::cout << "The matrix is already! Delete? (y/n): ";
 		if (Try_Error_Cin(ChoiceYesOrNo))
 		{
 			pArr = Delete_Arr(pArr);
@@ -156,12 +156,12 @@ void Cyclic_Shift_Arr(float** pointArr, const uint16_t& lineArr)
 
 			for (size_t j = 0; j < iterK; j++)
 			{
-				float* temp = &**(pointArr);
+				float* temp = *(pointArr);
 				for (size_t i = 0; i < lineArr - 1; i++)
 				{
-					*(pointArr + i) = &**(pointArr + (i + 1));
+					*(pointArr + i) = *(pointArr + (i + 1));
 				}
-				*(pointArr + (lineArr - 1)) = &*temp;
+				*(pointArr + (lineArr - 1)) = temp;
 			}
 			FixedIndexAdress = FixedIndexTemp;
 		}
