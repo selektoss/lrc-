@@ -29,7 +29,7 @@ int main(void)
 				SortDataTrain(fileData, filename, elementTrain);
 				break;
 			case 4:
-	//			EXIT Program/
+				//			EXIT Program/
 				break;
 			}
 		}
@@ -37,4 +37,4 @@ int main(void)
 	} while (ChoiceNumberMenu != 4);
 
 	return 0;
-}
+};
