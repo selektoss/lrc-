@@ -1,6 +1,6 @@
 #include "FuncArr.hpp"
 using namespace std;
-// Точка входа в программу. Начало.
+
 int main(void)
 {
 	cout << "0. Show array to console." << endl
@@ -12,7 +12,7 @@ int main(void)
 
 	uint16_t ChoiceNumberMenu = NULL, sizeArr = NULL;
 	float* pointArr = nullptr;	
-	// Зацикливаем программу.
+	
 	do
 	{
 		std::cout << "Make your choice: ";
@@ -21,26 +21,26 @@ int main(void)
 			switch (ChoiceNumberMenu)
 			{
 			case 0:
-				// Вызов функции вывода на консоль
+				
 				Show_Arr_Console(pointArr, sizeArr);
 				break;
 			case 1:
-				// Вызов функции создания массива
+				
 				pointArr = Great_Array_Dynamic_Memory(pointArr,sizeArr);
 				break;
 			case 2:
-				// Проверяем на четность размер массива
+				
 				if (sizeArr % 2 == NULL)
-				// Меняем элементы местами (чет.нечет)
+				
 				Swap_Element_Arr(pointArr, sizeArr);
 				else Swap_Element_Arr(pointArr, sizeArr - 1);
 				break;
 			case 3:
-				// Вызов функции сортировки мет. прямого выбора
+				
 				Sort_Arr_Descending_InsertMethod(pointArr, sizeArr - 1);
 				break;
 			case 4:
-				// Удаление массива
+				
 				pointArr = Delete_Arr(pointArr);
 				break;
 			case 5:
@@ -56,6 +56,6 @@ int main(void)
 		{
 			delete[] pointArr;
 		}
-	// Завершение программы
+	
 	return 0;
 }
