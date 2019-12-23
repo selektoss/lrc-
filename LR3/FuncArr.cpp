@@ -1,12 +1,12 @@
 #include <random>
 #include <iomanip>
 #include "FuncArr.hpp"
-// Функция создания динамического массива.
+
 float* Great_Array_Dynamic_Memory(float* pArr, uint16_t& size)
 {
 	const uint16_t MinSizeArr = 5, MaxSizeArr = 100;
 	char ChoiceYesOrNo;
-	// Проверка на существование памяти под указателем.
+	
 	if (pArr)
 	{
 		std::cout << "Array already created! " << "Delete it? (y/n): ";
@@ -23,7 +23,7 @@ float* Great_Array_Dynamic_Memory(float* pArr, uint16_t& size)
 
 		pArr = new float[size];
 		std::cout << "The array will be filled with random R numbers? (y/n): ";
-		// Проверка условия. Будем - ли заполнять массив рандомными числами.
+		
 		if (Try_Error_Cin(ChoiceYesOrNo))
 		{
 			float start_number_random = 0;
@@ -38,7 +38,7 @@ float* Great_Array_Dynamic_Memory(float* pArr, uint16_t& size)
 		}
 		else
 		{
-		// В цикле заполняем массив с клавиатуры.
+		
 			for (size_t i = 0; i < size; i++)
 			{
 				float ElementNumberInsertArray;
@@ -51,31 +51,31 @@ float* Great_Array_Dynamic_Memory(float* pArr, uint16_t& size)
 			std::cout << "Array created successfully!" << std::endl;
 		} else std::cout << "Array was not created!";
 	}
-	// Возврат указателя на массив
+	
 	return pArr;
 };
 
-// Сортировка массива методом прямого выбора, вставки от p+n до q.
+
 void Sort_Arr_Descending_InsertMethod(float* PointArr, const uint16_t const &SizeArr)
 {
-	// Проверка указателя
+	
 	if (PointArr)
 	{
-		// Ввод диапазона окрестности числового ряда от p до q.
+		
 		uint16_t p, q;
 		std::cout << "Enter the neighborhood range of a series of numbers to sort 1 < p < q < " << SizeArr << std::endl;
-		// Проверка условия 1 < p < q < n, за n взята переменная SizeArr.
+		
 		do 
 		{
 			std::cout << "p = ";
 			Try_Error_Cin(p);
-		} while ((p <= 1) || (p >= SizeArr - 1)); // p не может быть >= SizeArr - 1.
+		} while ((p <= 1) || (p >= SizeArr - 1)); 
 		
 		do 
 		{
 			std::cout << "q = "; 
 			Try_Error_Cin(q);
-		} while ((q <= p) || (q >= SizeArr)); // По аналогии с q.
+		} while ((q <= p) || (q >= SizeArr)); 
 				
 		const uint16_t RangeStartIndex = p;
 
@@ -111,10 +111,10 @@ void Show_Arr_Console(const float *PointArr, const uint16_t &SizeArr)
 
 void Swap_Element_Arr(float* PointArr, const uint16_t const &SizeArr)
 {   
-	// Проверка указателя
+	
 	if (PointArr)
 	{
-		// В цикле меняем пары элементов местами (чет.нечет). Итераций в 2 раза меньше размера массива
+		
 		for (size_t i = 0; i < SizeArr / 2; i++)
 		{
 			*(PointArr + (i + i)) += *(PointArr + (i + (i + 1)));
@@ -123,7 +123,7 @@ void Swap_Element_Arr(float* PointArr, const uint16_t const &SizeArr)
 		}
 		std::cout << "Changed the elements of even and odd indices!" << std::endl;
 	} else std::cout << "Nothing to change! Array not found." << std::endl;
-	// Выход
+	
 };
 
 float* Delete_Arr(float* PointerArr)
