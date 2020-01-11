@@ -44,8 +44,7 @@ int main(void)
 
 	if (pointArr)
 	{
-		delete[] * pointArr;
-		delete[] pointArr;
+		pointArr = Delete_Arr(pointArr);
 	}
 	return 0;
 };
