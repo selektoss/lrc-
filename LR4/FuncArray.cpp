@@ -27,7 +27,7 @@ float** Great_Array_Dynamic_Memory(float **pArr, uint16_t &lineArr, uint16_t &co
 		{
 			std::cout << "Enter the number of matrix columns : ";
 			Try_Error_Cin(columnArr);
-		} while ((columnArr != lineArr) || (columnArr < minLine));
+		} while ((columnArr == lineArr) || (columnArr < minLine));
 		*pArr = new float[lineArr * columnArr];
 
 		for (size_t i = 0; i < lineArr; i++)
