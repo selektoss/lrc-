@@ -119,8 +119,7 @@ void CoutList(AnketaData* pointNext)
 AnketaData* CheckLocalData(AnketaData* pointList)
 {
 	using namespace std;
-	ifstream localData;
-	localData.open("localDB.dat", ios_base::in | ios_base::ate | ios_base::binary);
+	ifstream localData ("localDB.dat", ios_base::in | ios_base::ate | ios_base::binary);
 	AnketaData* takeData = nullptr;
 	uint64_t sizeStepFileData = localData.tellg();
 	if (localData.is_open())
@@ -151,8 +150,7 @@ void SaveDataListLocalDB(AnketaData* pointStart)
 	using namespace std;
 	if (pointStart)
 	{
-		ofstream fileData;
-		fileData.open("localDB.dat", ios_base::out | ios_base::binary);
+		ofstream fileData ("localDB.dat", ios_base::out | ios_base::binary);
 		if (fileData.is_open())
 		{
 			while (pointStart) {
