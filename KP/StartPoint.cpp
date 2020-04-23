@@ -4,10 +4,10 @@
 int main(void)
 {	
 	ModelOBJ* objForm(LoadObjectForm());
-
-	while (true)
+	int chois(0);
+	while ((chois = ChoisMenu(objForm)) < objForm->sizeMenu - 1)
 	{
-		switch (ChoisMenu(objForm))
+		switch (chois)
 		{
 		case 0:
 		{
