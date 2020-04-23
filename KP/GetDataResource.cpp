@@ -16,7 +16,7 @@ void GetDataResourceMenu(ModelOBJ*& form, char*& title_contetnt, char**& nameSec
 		"#CONTENT\r", "^(#\\END_CONTENT[\\s\\S]*)", "^(#\\END_CONF[\\s\\S]*)"
 	};
 
-	string lineTemp, lineTemp1; stringstream lineBuffM(F::app | F::ate | F::in | F::out); std::stringstream lineBuff;
+	string lineTemp; stringstream lineBuffM(F::app | F::ate | F::in | F::out); std::stringstream lineBuff;
 	uint16_t check(NULL); uint16_t count(NULL); cmatch res; form->Menu = nullptr;
 
 	if (HRSRC FileResource = FindResource(GetModuleHandle(NULL), MAKEINTRESOURCE(INITXTFILE), "ini"))
